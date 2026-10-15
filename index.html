@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Яхт-клуб «Морская волна»</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Шапка сайта: логотип + навигация (flexbox) -->
+  <header class="site-header">
+    <h1>⚓ Яхт-клуб «Морская волна»</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#about">О клубе</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#gallery">Фотогалерея</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Обложка (hero) -->
+  <section id="home" class="hero-section">
+    <h2>Путешествуйте по морским просторам вместе с нами!</h2>
+    <p>Наслаждайтесь парусным спортом и отдыхом на воде.</p>
+    <a class="btn" href="#contact">Забронировать яхту</a>
+  </section>
+
+  <!-- О клубе -->
+  <section id="about" class="about-section">
+    <h2>О клубе</h2>
+    <p>Мы предлагаем обучение парусному спорту, аренду яхт и проведение морских прогулок. Клуб работает с 2005 года, в флотилии — 12 яхт, опытные шкиперы и инструкторы.</p>
+    <div class="facts">
+      <div><strong>20+</strong><span>лет на воде</span></div>
+      <div><strong>12</strong><span>яхт во флотилии</span></div>
+      <div><strong>1500</strong><span>выпускников школы</span></div>
+    </div>
+  </section>
+
+  <!-- Услуги -->
+  <section id="services" class="services-section">
+    <h2>Наши услуги</h2>
+    <ul class="cards">
+      <li><h3>Аренда яхт</h3><p>С экипажем или самостоятельно, на час или на несколько дней.</p></li>
+      <li><h3>Курсы парусного спорта</h3><p>Теория и практика для начинающих и опытных.</p></li>
+      <li><h3>Корпоративные мероприятия</h3><p>Регаты, тимбилдинг и банкеты на борту.</p></li>
+    </ul>
+  </section>
+
+  <!-- Фотогалерея -->
+<div id="gallery" class="gallery-images">
+  <figure>
+    <img src="img/board.jpg" alt="Парусник в открытом море">
+    <figcaption>Парусник «Морская волна»</figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/board_sunset.jpg" alt="Яхта на закате">
+    <figcaption>Вечерняя прогулка на закате</figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/regata_board.jpg" alt="Регата клуба">
+    <figcaption>Ежегодная регата клуба</figcaption>
+  </figure>
+</div>
+
+  <!-- Обратная связь -->
+  <section id="contact" class="contact-section">
+    <h2>Свяжитесь с нами</h2>
+    <form id="form">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="email" name="email" placeholder="Ваш email" required>
+      <textarea name="message" placeholder="Ваше сообщение" rows="4" required></textarea>
+      <button type="submit" class="btn">Отправить</button>
+    </form>
+  </section>
+
+  <!-- Подвал -->
+  <footer class="site-footer">
+    <p>Яхт-клуб «Морская волна», 2025—<span id="year">2026</span></p>
+    <p>г. Ростов-на-Дону, наб. Дона, 1 · +7 (863) 000-00-00 · info@sea-wave.example</p>
+  </footer>
+
+  <script>
+    // Текущий год в подвале
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Статический хостинг не умеет обрабатывать форму, поэтому показываем сообщение
+    document.getElementById('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
